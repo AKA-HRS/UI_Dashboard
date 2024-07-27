@@ -8,11 +8,11 @@ export default function Layout() {
       <div className="border rounded-l-2xl border-[#101011fd]">
         <Navbar />
       </div>
-      <div className="border w-full h-full rounded-r-2xl border-[#101011fd] relative flex">
-        <div className="w-3/4 rounded-l-2xl p-2">
+      <div className="border h-full rounded-r-2xl border-[#101011fd] relative flex ">
+        <div className=" rounded-l-2xl p-2 overflow-y-auto">
           <Outlet />
         </div>
-        <div className="w-1/4 rounded-r-2xl p-2">
+        <div className="rounded-r-2xl p-2">
           <Right />
         </div>
       </div>

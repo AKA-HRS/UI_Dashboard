@@ -5,12 +5,20 @@ export const Navigation = createContext();
 
 const NavigationProvider = ({ children }) => {
   const [active, setActive] = useState("/");
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const navigate = useNavigate();
   useEffect(() => {
     navigate(active);
   }, [active, navigate]);
+
+  const toggleWidth = () => {
+    setIsExpanded((prevState) => !prevState);
+  };
   return (
-    <Navigation.Provider value={{ active, setActive }}>
+    <Navigation.Provider
+      value={{ active, setActive, isExpanded, toggleWidth }}
+    >
       {children}
     </Navigation.Provider>
   );

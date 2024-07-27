@@ -45,16 +45,16 @@ const btnList = [
 ];
 
 export const Navbar = () => {
-  const {active,setActive} = useNav();
+  const { active, setActive,isExpanded,toggleWidth } = useNav();
 
   const handleClick = (link) => {
     setActive(link);
   };
 
   return (
-    <div className="text-white relative flex flex-col space-y-10  rounded-l-3xl h-full w-72 p-2 ">
+    <div className={`text-white relative flex flex-col space-y-10  rounded-l-3xl h-full w-${isExpanded?"72":"24"} p-2  transition-all duration-300`}>
       <div className="w-full">
-        <button className="ml-10">
+        <button className="ml-6" onClick={toggleWidth}>
           <BiMenu
             style={{
               width: "2rem",
@@ -76,7 +76,7 @@ export const Navbar = () => {
         />
       ))}
 
-      <div className="w-auto h-auto flex flex-col justify-center items-center absolute bottom-16 left-10">
+      <div className={`w-22 h-24 flex flex-col justify-center items-center absolute bottom-16 left-${isExpanded?"10":"2"}`}>
         <button className="w-16 h-16 rounded-full flex justify-center items-center relative p-2 from-black to-slate-600 bg-custom-gradient">
           <img
             src={dp}
@@ -85,7 +85,7 @@ export const Navbar = () => {
           />
           <span className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-green-500 text-center text-2xl font-bold"></span>
         </button>
-        <p className="font-bold text-sm">David Milan</p>
+        <p className="font-bold text-xs">David Milan</p>
       </div>
     </div>
   );
