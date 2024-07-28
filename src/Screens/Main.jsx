@@ -58,7 +58,7 @@ const card = [
 
 export const Main = () => {
   return (
-    <div className="w-full h-full p-10 text-white">
+    <div className="w-full h-full md:p-10 p-5 text-white">
       <SearchBar />
 
       <div className="w-64 h-20 mt-10">
@@ -77,7 +77,7 @@ export const Main = () => {
         <p className="text-sm text-gray-400">Welcome Back !</p>
       </div>
 
-      <div className="w-full h-60 mt-2 flex justify-evenly items-center">
+      <div className="w-full mt-2 flex flex-wrap relative md:space-x-4 max-md:space-y-9 items-center">
         {cardList.map((card) => (
           <DisplayCard
             icon={card.icon}
@@ -88,7 +88,7 @@ export const Main = () => {
         ))}
       </div>
 
-      <div className="w-full h-96 mt-2 relative flex flex-wrap justify-evenly items-center">
+      <div className="w-full md:h-96 mt-2 relative flex flex-wrap justify-evenly items-center">
         {card.map((c) => (
           <GlowCard
             color={c.color}

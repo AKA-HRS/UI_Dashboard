@@ -45,14 +45,16 @@ const btnList = [
 ];
 
 export const Navbar = () => {
-  const { active, setActive,isExpanded,toggleWidth } = useNav();
+  const { active, setActive, isExpanded, toggleWidth } = useNav();
 
   const handleClick = (link) => {
     setActive(link);
   };
 
   return (
-    <div className={`text-white relative flex flex-col space-y-10  rounded-l-3xl h-full w-${isExpanded?"72":"24"} p-2  transition-all duration-300`}>
+    <div
+      className={`text-white relative flex flex-col rounded-l-3xl h-full w-full p-2 overflow-y-auto`}
+    >
       <div className="w-full">
         <button className="ml-6" onClick={toggleWidth}>
           <BiMenu
@@ -64,19 +66,25 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {btnList.map((btn) => (
-        <Button
-          key={btn.name}
-          name={btn.name}
-          icon={btn.icon}
-          onClick={() => handleClick(btn.linkTo)}
-          isActive={active === btn.linkTo}
-          w={"full"}
-          h={"10"}
-        />
-      ))}
+      <div className="h-3/4 w-full flex flex-col space-y-10 mt-10 items-center">
+        {btnList.map((btn) => (
+          <Button
+            key={btn.name}
+            name={btn.name}
+            icon={btn.icon}
+            onClick={() => handleClick(btn.linkTo)}
+            isActive={active === btn.linkTo}
+            w={"full"}
+            h={"10"}
+          />
+        ))}
+      </div>
 
-      <div className={`w-22 h-24 flex flex-col justify-center items-center absolute bottom-16 left-${isExpanded?"10":"2"}`}>
+      <div
+        className={`w-20 h-24 flex flex-col justify-center items-center relative bottom-0 ${
+          isExpanded ? "left-7" : "left-0"
+        }`}
+      >
         <button className="w-16 h-16 rounded-full flex justify-center items-center relative p-2 from-black to-slate-600 bg-custom-gradient">
           <img
             src={dp}

@@ -67,7 +67,7 @@ export const Right = () => {
         ))}
       </div>
 
-      <div className=" w-full mt-10 p-5">
+      <div className=" w-full mt-4 p-5">
         <h3 className="mb-5 font-bold text-xl">Sales Revenue</h3>
         {infoList.map((data) => (
           <div className="flex mt-8" key={useId()}>
@@ -76,8 +76,8 @@ export const Right = () => {
         ))}
       </div>
 
-      <div className="w-full mt-5 p-5 ">
-        <h3 className="mb-5 font-bold text-xl">Statistics</h3>
+      <div className="w-full mt-2 p-5 ">
+        <h3 className="mb-2 font-bold text-xl">Statistics</h3>
         <div className="w-full h-64 relative flex bg-card-gradient rounded-2xl  overflow-hidden pt-5">
           <Chart  />
         </div>

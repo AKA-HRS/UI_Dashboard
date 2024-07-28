@@ -16,7 +16,7 @@ function App() {
     <>
       <BrowserRouter>
         <NavigationProvider>
-          <div className="w-screen h-screen flex bg-gray-bg p-5">
+          <div className="w-screen h-screen flex bg-gray-bg p-5 overflow-hidden">
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route index element={<Main />} />
