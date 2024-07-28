@@ -23,7 +23,7 @@ const renderCustomBarLabel = ({ x, y, width, value }) => {
 };
 export function Chart() {
   return (
-    <ResponsiveContainer width={300} height={210}>
+    <ResponsiveContainer height={180}>
       <BarChart width={600} height={180} data={data}>
         <defs>
           <linearGradient id="barGradient" x1="1" y1="0" x2="1" y2="1">

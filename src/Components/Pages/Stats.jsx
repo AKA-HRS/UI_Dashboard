@@ -1,7 +1,11 @@
-import React from 'react'
+import React from "react";
+import { Right } from "../../Screens";
 
 export function Stats() {
   return (
-    <div>Stats</div>
+    <div className="hidden max-md:flex justify-center items-center">
+      
+    <Right/>
+    </div>
   )
 }

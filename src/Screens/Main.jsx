@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import { SearchBar } from "../Components/UI/SearchBar";
 import { DisplayCard, GlowCard } from "../Components/UI/Card";
 import { IoCompassOutline, IoEyeOutline } from "react-icons/io5";
@@ -80,6 +80,7 @@ export const Main = () => {
       <div className="w-full mt-2 flex flex-wrap relative md:space-x-4 max-md:space-y-9 items-center">
         {cardList.map((card) => (
           <DisplayCard
+          key={useId()}
             icon={card.icon}
             title={card.title}
             quantity={card.quantity}
@@ -91,6 +92,7 @@ export const Main = () => {
       <div className="w-full md:h-96 mt-2 relative flex flex-wrap justify-evenly items-center">
         {card.map((c) => (
           <GlowCard
+          key={useId()}
             color={c.color}
             desctiption={c.desctiption}
             title={c.title}
